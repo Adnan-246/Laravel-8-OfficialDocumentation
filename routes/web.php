@@ -22,10 +22,10 @@ Route::get('/test', function(){
     Hunter::test();
 });
 
- Route::get('/about', function () {
-     // dd(app());
-     return view('about');
- });
+//  Route::get('/about', function () {
+//      // dd(app());
+//      return view('about');
+//  });
 
 //Another Route System
 // Route::view('/about', 'about');
@@ -34,6 +34,11 @@ Route::get('/contact', function () {
     // dd(app());
     return view('contact');
 });
+
+//Named Route
+ Route::get( md5('str') ,function(){
+     return view('about');
+ })->name('about.us');
 
 
 //serviceProvider Example
