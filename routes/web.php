@@ -22,6 +22,19 @@ Route::get('/test', function(){
     Hunter::test();
 });
 
+ Route::get('/about', function () {
+     // dd(app());
+     return view('about');
+ });
+
+//Another Route System
+// Route::view('/about', 'about');
+
+Route::get('/contact', function () {
+    // dd(app());
+    return view('contact');
+});
+
 
 //serviceProvider Example
 // Route::get('/test', function () {
