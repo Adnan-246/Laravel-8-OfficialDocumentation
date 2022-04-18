@@ -35,6 +35,11 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/country', function () {
+    // dd(app());
+    return view('country');
+})->middleware('country');
+
 //Named Route
  Route::get( md5('str') ,function(){
      return view('about');

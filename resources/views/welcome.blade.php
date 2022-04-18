@@ -35,15 +35,19 @@
                     @endauth
                 </div>
             @endif
-
+            
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+            <h1>This is my Home Page</h1>
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
+                
                    <ul class="list">
                        <li class="list-item"><a href="{{ route('about.us') }}">About</a></li>
                        <li class="list-item"><a href="{{ url('/contact') }}">Contact</a></li>
+                       <li class="list-item"><a href="{{ URL::to('/country') }}">Country</a></li>
                    </ul>
                 </div>
             </div>
         </div>
+        
     </body>
 </html>
