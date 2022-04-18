@@ -41,7 +41,7 @@ Route::get('/country', function () {
 })->middleware('country');
 
 //Named Route
- Route::get( md5('str') ,function(){
+ Route::get( md5('/about') ,function(){
      return view('about');
  })->name('about.us');
 
@@ -57,3 +57,4 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
