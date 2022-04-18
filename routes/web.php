@@ -17,6 +17,12 @@ Route::get('/', function () {
     // dd(app());
     return view('welcome');
 });
+
+Route::get('/test', function(){
+    Hunter::test();
+});
+
+
 //serviceProvider Example
 // Route::get('/test', function () {
 //     app()->make('first_service_provider');
