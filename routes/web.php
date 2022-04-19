@@ -47,7 +47,8 @@ Route::get('/test1', LearnController::class);
 //_Middleware Controller
 Route::get('/country', [FirstController::class, 'country'])->middleware('country');
 
-
+//CSRF Token
+Route::post('/student/store', [FirstController::class, 'studentStore'])->name('student.store');
 
 // Route::get('/country', function () {
 //     // dd(app());

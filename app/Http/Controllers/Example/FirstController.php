@@ -15,4 +15,10 @@ class FirstController extends Controller
     {
        return view('country');
     }
+
+    // _Student Store
+    public function studentStore(Request $request)
+    {
+        dd($request->all());
+    }
 }
