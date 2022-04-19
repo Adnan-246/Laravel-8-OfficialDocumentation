@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Example\FirstController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,10 +32,13 @@ Route::get('/test', function(){
 //Another Route System
 // Route::view('/about', 'about');
 
-Route::get('/contact', function () {
-    // dd(app());
-    return view('contact');
-});
+// Route::get('/contact', function () {
+//     // dd(app());
+//     return view('contact');
+// });
+
+//_Laravel 8 
+Route::get('/contact', [FirstController::class, 'index']);
 
 Route::get('/country', function () {
     // dd(app());
