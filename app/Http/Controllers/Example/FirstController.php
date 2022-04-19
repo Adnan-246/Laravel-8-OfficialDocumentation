@@ -11,4 +11,8 @@ class FirstController extends Controller
     {
         return view('contact');
     }
+    public function country()
+    {
+       return view('country');
+    }
 }

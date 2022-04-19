@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Example\FirstController;
-
+//_Invoke Controller_//
+use App\Http\Controllers\Example\LearnController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,13 +38,21 @@ Route::get('/test', function(){
 //     return view('contact');
 // });
 
-//_Laravel 8 
+//_Laravel 8 Route Rule
 Route::get('/contact', [FirstController::class, 'index']);
 
-Route::get('/country', function () {
-    // dd(app());
-    return view('country');
-})->middleware('country');
+//_Invoke Route
+Route::get('/test1', LearnController::class);
+
+//_Middleware Controller
+Route::get('/country', [FirstController::class, 'country'])->middleware('country');
+
+
+
+// Route::get('/country', function () {
+//     // dd(app());
+//     return view('country');
+// })->middleware('country');
 
 //Named Route
  Route::get( md5('/about') ,function(){
