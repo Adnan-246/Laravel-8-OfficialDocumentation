@@ -21,4 +21,15 @@ class FirstController extends Controller
     {
         dd($request->all());
     }
+    
+    //_Store About
+    public function storeAbout(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|max:50',
+            'email' => 'required|unique:users|max:80|email',
+            'password' => 'required|min:4|max:8',
+        ]);
+        dd($request->all());
+    }
 }

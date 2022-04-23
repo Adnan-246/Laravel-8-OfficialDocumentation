@@ -47,6 +47,17 @@ Route::get('/test1', LearnController::class);
 //_Middleware Controller
 Route::get('/country', [FirstController::class, 'country'])->middleware('country');
 
+
+//_Session_//
+Route::get('/test2', function(Request $request){
+    $request->session()->put('name', 'habib');  //or
+    session(['age'=> '24']);
+});
+//_Show Session
+Route::get('/all', function(Request $request){
+   return $request->session()->all();
+});
+
 //CSRF Token
 Route::post('/student/store', [FirstController::class, 'studentStore'])->name('student.store');
 
@@ -59,6 +70,9 @@ Route::post('/student/store', [FirstController::class, 'studentStore'])->name('s
  Route::get( md5('/about') ,function(){
      return view('about');
  })->name('about.us');
+
+ //Store _About *Validation*
+ Route::post('/store/about', [FirstController::class, 'storeAbout'])->name('store.about');
 
 
 //serviceProvider Example

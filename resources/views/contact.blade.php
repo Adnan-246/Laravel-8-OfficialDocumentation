@@ -20,7 +20,10 @@
       <input type="email" name="email" placeholder="Enter your email"><br><br>
       <input type="text" name="phone" placeholder="Enter your phone"><br><br>
       <button type="submit" class="btn btn-primary">Submit</button>
-  
+      
+     
+      
+
   </form>
   </div>
 </body>
