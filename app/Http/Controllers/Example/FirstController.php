@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Example;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Log;
 
 class FirstController extends Controller
 {
@@ -30,6 +31,15 @@ class FirstController extends Controller
             'email' => 'required|unique:users|max:80|email',
             'password' => 'required|min:4|max:8',
         ]);
-        dd($request->all());
+        //database a data insert korte hbe
+        //query kore data insert korte hbe
+        //store the record on log file
+
+        //  Log::channel('aboutstore')->info('The Form submittedby'.Auth::id()); //1
+        //oR
+         Log::channel('aboutstore')->info('The Form submitted by'.' ' .rand(1,20));
+         return redirect()->back(); 
+
+        //dd($request->all());
     }
 }

@@ -81,6 +81,22 @@ Route::post('/student/store', [FirstController::class, 'studentStore'])->name('s
     
 // });
 
+//_Logging(Log file)
+Route::get('/test3', function(Request $request){
+    Log::info('This is your age'.rand(1,30));
+    return redirect()->to('/');
+});
+
+//_Show Logfile
+Route::get('/test4', function(Request $request){
+    $logfile=file(storage_path().'/logs/about.log');
+    $collection =[];
+    foreach($logfile as $line_number=>$line){
+        $collection[] =array('line'=>$line_number, 'content'=>htmlspecialchars($line));
+    }
+    dd($collection);
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
